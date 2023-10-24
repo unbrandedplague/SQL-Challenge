@@ -1,0 +1,65 @@
+-- SELECT first_name, last_name, hire_Date
+-- FROM "Employees"
+-- WHERE EXTRACT(YEAR FROM hire_date) = 1986;
+-- SELECT schema_name
+-- FROM information_schema.schemata;
+-- SELECT
+-- 	DM.dept_no AS department_number,
+-- 	D.dept_name AS department_name,
+-- 	DM.emp_no AS manager_employee_number,
+-- 	E.last_name AS manager_last_name,
+-- 	E.first_name AS manager_first_name
+-- FROM
+-- 	"Department Manager" AS DM
+-- 	JOIN "Departments" AS D ON DM.dept_no = D.dept_no
+-- 	JOIN "Employees" AS E on DM.emp_no = E.emp_no;
+-- SELECT
+-- 	DE.emp_no AS employee_number,
+-- 	E.last_name AS employee_last_name,
+-- 	E.first_name AS employee_first_name,
+-- 	DE.dept_no AS department_number,
+-- 	D.dept_name AS department_name
+-- FROM
+-- 	"Department Employees" AS DE
+-- 	JOIN "Employees" AS E on DE.emp_no = E.emp_no
+-- 	JOIN "Departments" AS D ON DE.dept_no = D.dept_no;
+-- SELECT
+-- 	first_name,
+-- 	last_name,
+-- 	sex
+-- FROM
+-- 	"Employees"
+-- WHERE
+-- 	first_name = 'Hercules'
+-- 	AND last_name LIKE 'B%';
+-- SELECT
+-- 	DE.emp_no AS employee_number,
+-- 	E.last_name AS employee_last_name,
+-- 	E.first_name AS employee_first_name
+-- FROM
+-- 	"Department Employees" AS DE
+-- 	JOIN "Employees" AS E ON DE.emp_no = E.emp_no
+-- 	JOIN "Departments" AS D ON DE.dept_no = D.dept_no
+-- WHERE
+-- 	D.dept_name = 'Sales';
+-- SELECT
+-- 	DE.emp_no AS employee_number,
+-- 	E.last_name AS employee_last_name,
+-- 	E.first_name AS employee_first_name,
+-- 	D.dept_name AS department_name
+-- FROM
+-- 	"Department Employees" AS DE
+-- 	JOIN "Employees" AS E ON DE.emp_no = E.emp_no
+-- 	JOIN "Departments" AS D ON DE.dept_no = D.dept_no
+-- WHERE
+-- 	D.dept_name IN ('Sales', 'Development');
+-- SELECT
+-- 	last_name,
+-- 	COUNT(*) AS last_name_count
+-- FROM
+-- 	"Employees"
+-- GROUP BY
+-- 	last_name
+-- ORDER BY
+-- 	last_name_count DESC;
+
